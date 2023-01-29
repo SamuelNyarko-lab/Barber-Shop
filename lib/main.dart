@@ -1,3 +1,4 @@
+import 'package:barbershop/service/routes.dart';
 import 'package:flutter/material.dart';
 import 'screens/splashscreen.dart';
 
@@ -17,7 +18,9 @@ class BarberShop extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SplashScreen(),
+      //home: const SplashScreen(),
+      initialRoute: RouteManager.splash,
+      onGenerateRoute: RouteManager.generateRoute,
     );
   }
 }
