@@ -1,6 +1,5 @@
 import 'package:barbershop/service/routes.dart';
 import 'package:flutter/material.dart';
-import 'screens/splashscreen.dart';
 
 void main() {
   runApp(const BarberShop());

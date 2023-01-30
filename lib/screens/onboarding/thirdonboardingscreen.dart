@@ -5,8 +5,8 @@ import 'package:carousel_indicator/carousel_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class OnboardingScreen extends StatelessWidget {
-  const OnboardingScreen({super.key});
+class ThirdOnboardingScreen extends StatelessWidget {
+  const ThirdOnboardingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class OnboardingScreen extends StatelessWidget {
                     0.5,
                   ),
                   image: AssetImage(
-                    'assets/images/Onboarding 1.jpg',
+                    'assets/images/Onboarding 3.jpg',
                   )),
             ),
             Positioned(
@@ -37,7 +37,7 @@ class OnboardingScreen extends StatelessWidget {
               right: 0,
               bottom: 0,
               child: Padding(
-                padding: const EdgeInsets.only(top:10.0),
+                padding: const EdgeInsets.only(top: 20.0),
                 child: Center(
                   child: SingleChildScrollView(
                     child: Column(
@@ -48,34 +48,37 @@ class OnboardingScreen extends StatelessWidget {
                           height: 150,
                           width: 150,
                           child: Image(
-                            fit: BoxFit.contain,
+                            //   fit: BoxFit.contain,
                             image: AssetImage(
                               'assets/images/logo.png',
                             ),
                           ),
                         ),
-                        SizedBox(
-                          height: 50,
-                          width: deviceWidth - 80,
-                          child: AutoSizeText(
-                            'Let\'s beautify you',
-                            // maxLines: 1,
-                            textAlign: TextAlign.center,
-                            maxFontSize: 35,
-                            minFontSize: 35,
-                            style: GoogleFonts.manrope(
-                              letterSpacing: 0.1,
-                              color: Colors.white,
-                              decoration: TextDecoration.none,
-                              fontSize: 35,
-                              fontWeight: FontWeight.bold,
+                        Padding(
+                          padding: const EdgeInsets.only(top: 10.0),
+                          child: SizedBox(
+                            height: 50,
+                            width: deviceWidth - 50,
+                            child: AutoSizeText(
+                              'Book appointment',
+                              // maxLines: 1,
+                              textAlign: TextAlign.center,
+                              maxFontSize: 35,
+                              minFontSize: 35,
+                              style: GoogleFonts.manrope(
+                                letterSpacing: 0.1,
+                                color: Colors.white,
+                                decoration: TextDecoration.none,
+                                fontSize: 35,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ),
                         SizedBox(
                           width: deviceWidth - 80,
                           child: AutoSizeText(
-                            'We specialize in haircut, hairlock, tattoo, manicure, pedicure nad earpiercing.',
+                            'Book us for your indoor and outdoor services, a trial will convince you.',
                             textAlign: TextAlign.center,
                             maxFontSize: 18,
                             minFontSize: 18,
@@ -90,11 +93,11 @@ class OnboardingScreen extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(
-                            vertical: 80,
+                            vertical: 100,
                           ),
                           child: CarouselIndicator(
                             count: 3,
-                            index: 0,
+                            index: 1,
                             height: 20,
                             cornerRadius: 70,
                           ),
@@ -132,7 +135,10 @@ class OnboardingScreen extends StatelessWidget {
                                 ),
                               ),
                               MaterialButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                      context, 'fourthonboarding');
+                                },
                                 minWidth: deviceWidth / 2.5,
                                 height: 60,
                                 color: Color.fromRGBO(
