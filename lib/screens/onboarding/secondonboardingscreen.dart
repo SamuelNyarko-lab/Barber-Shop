@@ -112,7 +112,8 @@ class SecondOnboardingScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               MaterialButton(
-                                onPressed: () {},
+                                onPressed: () {Navigator.pushNamed(
+                                      context, 'fourthonboarding');},
                                 minWidth: deviceWidth / 2.5,
                                 height: 60,
                                 shape: RoundedRectangleBorder(

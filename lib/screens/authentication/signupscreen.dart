@@ -1,11 +1,12 @@
+
 // ignore_for_file: prefer_const_constructors
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class FourthOnboardingScreen extends StatelessWidget {
-  const FourthOnboardingScreen({super.key});
+class SignupScreen extends StatelessWidget {
+  const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
