@@ -97,7 +97,7 @@ class ThirdOnboardingScreen extends StatelessWidget {
                           ),
                           child: CarouselIndicator(
                             count: 3,
-                            index: 1,
+                            index: 2,
                             height: 20,
                             cornerRadius: 70,
                           ),

@@ -5,7 +5,6 @@ import 'package:carousel_indicator/carousel_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class SecondOnboardingScreen extends StatelessWidget {
   const SecondOnboardingScreen({super.key});
 
@@ -97,11 +96,11 @@ class SecondOnboardingScreen extends StatelessWidget {
                             vertical: 100,
                           ),
                           child: CarouselIndicator(
-      count: 3,
-      index: 1,
-      height: 20,
-      cornerRadius: 70,
-    ),
+                            count: 3,
+                            index: 1,
+                            height: 20,
+                            cornerRadius: 70,
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(
@@ -112,8 +111,10 @@ class SecondOnboardingScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               MaterialButton(
-                                onPressed: () {Navigator.pushNamed(
-                                      context, 'fourthonboarding');},
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                      context, 'fourthonboarding');
+                                },
                                 minWidth: deviceWidth / 2.5,
                                 height: 60,
                                 shape: RoundedRectangleBorder(
@@ -190,5 +191,3 @@ class SecondOnboardingScreen extends StatelessWidget {
     );
   }
 }
-
-

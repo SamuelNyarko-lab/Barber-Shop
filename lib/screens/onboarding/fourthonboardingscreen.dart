@@ -62,7 +62,9 @@ class FourthOnboardingScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               MaterialButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(context, 'login');
+                                },
                                 minWidth: deviceWidth - 50,
                                 height: 60,
                                 color: Color.fromRGBO(
@@ -101,7 +103,9 @@ class FourthOnboardingScreen extends StatelessWidget {
                                 height: 30,
                               ),
                               MaterialButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(context, 'signup');
+                                },
                                 minWidth: deviceWidth - 50,
                                 height: 60,
                                 shape: RoundedRectangleBorder(

@@ -1,7 +1,7 @@
-
 // ignore_for_file: prefer_const_constructors
 
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:barbershop/widgets/signupbox.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,32 +12,33 @@ class SignupScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     double deviceHeight = MediaQuery.of(context).size.height;
     double deviceWidth = MediaQuery.of(context).size.width;
-    return SizedBox(
-      height: deviceHeight,
-      width: deviceWidth,
-      child: Center(
-        child: Stack(
-          children: [
-            Container(
-              color: Colors.black45,
-              height: deviceHeight,
-              width: deviceWidth,
-              child: const Image(
-                  fit: BoxFit.fill,
-                  opacity: AlwaysStoppedAnimation(
-                    0.5,
-                  ),
-                  image: AssetImage(
-                    'assets/images/Onboarding 4.jpg',
-                  )),
-            ),
-            Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 20.0),
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      resizeToAvoidBottomInset: true,
+      body: Center(
+        child: SizedBox(
+          // height: deviceHeight,
+          width: deviceWidth,
+          child: Stack(
+            children: [
+              Container(
+                color: Colors.black45,
+                height: deviceHeight,
+                width: deviceWidth,
+                child: const Image(
+                    fit: BoxFit.fill,
+                    opacity: AlwaysStoppedAnimation(
+                      0.5,
+                    ),
+                    image: AssetImage(
+                      'assets/images/Onboarding 4.jpg',
+                    )),
+              ),
+              Positioned(
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
                 child: Center(
                   child: SingleChildScrollView(
                     child: Column(
@@ -45,96 +46,71 @@ class SignupScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
-                          height: 150,
-                          width: 150,
-                          child: Image(
-                            //   fit: BoxFit.contain,
-                            image: AssetImage(
-                              'assets/images/logo.png',
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 15,
-                            vertical: 0,
-                          ),
+                          // height: deviceHeight/2.5,
+
                           child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              MaterialButton(
-                                onPressed: () {},
-                                minWidth: deviceWidth - 50,
-                                height: 60,
-                                color: Color.fromRGBO(
-                                  125,
-                                  106,
-                                  4,
-                                  1,
+                              SizedBox(
+                                height: 150,
+                                width: 150,
+                                child: Image(
+                                  //   fit: BoxFit.contain,
+                                  image: AssetImage(
+                                    'assets/images/logo.png',
+                                  ),
                                 ),
-                                shape: RoundedRectangleBorder(
-                                  side: BorderSide(
-                                    color: Color.fromRGBO(
-                                      125,
-                                      106,
-                                      4,
-                                      1,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 10.0),
+                                child: SizedBox(
+                                  height: 50,
+                                  width: deviceWidth - 80,
+                                  child: AutoSizeText(
+                                    'Let\'s start',
+                                    // maxLines: 1,
+                                    textAlign: TextAlign.center,
+                                    maxFontSize: 35,
+                                    minFontSize: 35,
+                                    style: GoogleFonts.manrope(
+                                      letterSpacing: 0.1,
+                                      color: Colors.white,
+                                      decoration: TextDecoration.none,
+                                      fontSize: 35,
+                                      fontWeight: FontWeight.bold,
                                     ),
-                                    style: BorderStyle.solid,
-                                    width: 1.5,
-                                  ),
-                                  borderRadius: BorderRadius.circular(
-                                    15,
-                                  ),
-                                ),
-                                child: AutoSizeText(
-                                  'Login',
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.manrope(
-                                    color: Colors.white,
-                                    decoration: TextDecoration.none,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
                               ),
                               SizedBox(
-                                height: 30,
-                              ),
-                              MaterialButton(
-                                onPressed: () {},
-                                minWidth: deviceWidth - 50,
-                                height: 60,
-                                shape: RoundedRectangleBorder(
-                                  side: BorderSide(
-                                      color: Colors.white,
-                                      style: BorderStyle.solid,
-                                      width: 1.5),
-                                  borderRadius: BorderRadius.circular(
-                                    15,
-                                  ),
-                                ),
+                                width: deviceWidth - 120,
                                 child: AutoSizeText(
-                                  'Sign up',
+                                  'Enter your mobile number to Sign up',
                                   textAlign: TextAlign.center,
+                                  maxFontSize: 18,
+                                  minFontSize: 18,
                                   style: GoogleFonts.manrope(
+                                    letterSpacing: 0.1,
                                     color: Colors.white,
                                     decoration: TextDecoration.none,
                                     fontSize: 18,
-                                    fontWeight: FontWeight.bold,
+                                    fontWeight: FontWeight.w500,
                                   ),
                                 ),
                               ),
                             ],
                           ),
-                        )
+                        ),
+                        SizedBox(
+                          height: 50,
+                        ),
+                        SignupBox(),
                       ],
                     ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
