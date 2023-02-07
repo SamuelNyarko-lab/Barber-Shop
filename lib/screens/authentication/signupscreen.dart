@@ -6,111 +6,95 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SignupScreen extends StatelessWidget {
-  const SignupScreen({super.key});
-
+  SignupScreen({super.key});
+  final TextEditingController numbertextEditingController =
+      TextEditingController();
   @override
   Widget build(BuildContext context) {
     double deviceHeight = MediaQuery.of(context).size.height;
     double deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.transparent,
-      resizeToAvoidBottomInset: true,
-      body: Center(
-        child: SizedBox(
-          // height: deviceHeight,
-          width: deviceWidth,
-          child: Stack(
-            children: [
-              Container(
-                color: Colors.black45,
-                height: deviceHeight,
-                width: deviceWidth,
-                child: const Image(
-                    fit: BoxFit.fill,
-                    opacity: AlwaysStoppedAnimation(
-                      0.5,
-                    ),
-                    image: AssetImage(
-                      'assets/images/Onboarding 4.jpg',
-                    )),
-              ),
-              Positioned(
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                child: Center(
-                  child: SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          // height: deviceHeight/2.5,
-
-                          child: Column(
-                            children: [
-                              SizedBox(
-                                height: 150,
-                                width: 150,
-                                child: Image(
-                                  //   fit: BoxFit.contain,
-                                  image: AssetImage(
-                                    'assets/images/logo.png',
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 10.0),
-                                child: SizedBox(
-                                  height: 50,
-                                  width: deviceWidth - 80,
-                                  child: AutoSizeText(
-                                    'Let\'s start',
-                                    // maxLines: 1,
-                                    textAlign: TextAlign.center,
-                                    maxFontSize: 35,
-                                    minFontSize: 35,
-                                    style: GoogleFonts.manrope(
-                                      letterSpacing: 0.1,
-                                      color: Colors.white,
-                                      decoration: TextDecoration.none,
-                                      fontSize: 35,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: deviceWidth - 120,
-                                child: AutoSizeText(
-                                  'Enter your mobile number to Sign up',
-                                  textAlign: TextAlign.center,
-                                  maxFontSize: 18,
-                                  minFontSize: 18,
-                                  style: GoogleFonts.manrope(
-                                    letterSpacing: 0.1,
-                                    color: Colors.white,
-                                    decoration: TextDecoration.none,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          height: 50,
-                        ),
-                        SignupBox(),
-                      ],
+      body: SizedBox(
+        height: deviceHeight,
+        child: Stack(
+          children: [
+            Container(
+              color: Colors.black45,
+              height: deviceHeight,
+              width: deviceWidth,
+              child: const Image(
+                  fit: BoxFit.fill,
+                  opacity: AlwaysStoppedAnimation(
+                    0.5,
+                  ),
+                  image: AssetImage(
+                    'assets/images/Onboarding 4.jpg',
+                  )),
+            ),
+            SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 40,
+                  ),
+                  SizedBox(
+                    height: 150,
+                    width: 150,
+                    child: Image(
+                      //   fit: BoxFit.contain,
+                      image: AssetImage(
+                        'assets/images/logo.png',
+                      ),
                     ),
                   ),
-                ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10.0),
+                    child: SizedBox(
+                      height: 50,
+                      width: deviceWidth - 80,
+                      child: AutoSizeText(
+                        'Let\'s start',
+                        // maxLines: 1,
+                        textAlign: TextAlign.center,
+                        maxFontSize: 35,
+                        minFontSize: 35,
+                        style: GoogleFonts.manrope(
+                          letterSpacing: 0.1,
+                          color: Colors.white,
+                          decoration: TextDecoration.none,
+                          fontSize: 35,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: deviceWidth - 120,
+                    child: AutoSizeText(
+                      'Enter your mobile number to Sign up',
+                      textAlign: TextAlign.center,
+                      maxFontSize: 18,
+                      minFontSize: 18,
+                      style: GoogleFonts.manrope(
+                        letterSpacing: 0.1,
+                        color: Colors.white,
+                        decoration: TextDecoration.none,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  SignupBox()
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

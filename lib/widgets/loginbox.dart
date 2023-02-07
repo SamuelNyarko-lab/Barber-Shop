@@ -4,11 +4,10 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SignupBox extends StatelessWidget {
-  SignupBox({
+class LoginBox extends StatelessWidget {
+  LoginBox({
     super.key,
   });
-  GlobalKey<FormState> formkey = GlobalKey<FormState>();
   TextEditingController numbertextEditingController = TextEditingController();
 
   @override
@@ -33,7 +32,7 @@ class SignupBox extends StatelessWidget {
           children: [
             TextFormField(
               validator: (value) {
-                if (value!.isEmpty || value.length < 13) {
+                if (value!.isEmpty) {
                   return 'Not Accepted';
                 }
                 return null;
@@ -63,7 +62,7 @@ class SignupBox extends StatelessWidget {
                 ),
                 floatingLabelBehavior: FloatingLabelBehavior.never,
                 label: AutoSizeText(
-                  'Phone number',
+                  'Username',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.manrope(
                     color: Colors.grey,
@@ -73,7 +72,7 @@ class SignupBox extends StatelessWidget {
                   ),
                 ),
                 //fillColor: Colors.blue,
-      
+
                 border: OutlineInputBorder(
                   borderSide: BorderSide(
                     width: 1.5,
@@ -83,7 +82,7 @@ class SignupBox extends StatelessWidget {
                     15,
                   ),
                 ),
-      
+
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     width: 1.5,
@@ -93,7 +92,7 @@ class SignupBox extends StatelessWidget {
                     15,
                   ),
                 ),
-      
+
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     width: 1.5,
@@ -115,7 +114,146 @@ class SignupBox extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 30,
+              height: 20,
+            ),
+            TextFormField(
+              validator: (value) {
+                if (value!.isEmpty || value.length < 8) {
+                  return 'Invalid password';
+                }
+                return null;
+              },
+              controller: numbertextEditingController,
+              cursorHeight: 25,
+              cursorColor: Color.fromRGBO(
+                125,
+                106,
+                4,
+                1,
+              ),
+              style: GoogleFonts.manrope(
+                color: Colors.black,
+                decoration: TextDecoration.none,
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+              ),
+              maxLines: 1,
+              minLines: 1,
+              decoration: InputDecoration(
+                errorStyle: GoogleFonts.manrope(
+                  color: Colors.red,
+                  decoration: TextDecoration.none,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                ),
+                floatingLabelBehavior: FloatingLabelBehavior.never,
+                label: AutoSizeText(
+                  'Password',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.manrope(
+                    color: Colors.grey,
+                    decoration: TextDecoration.none,
+                    fontSize: 17,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                //fillColor: Colors.blue,
+
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    width: 1.5,
+                    color: Colors.grey,
+                  ),
+                  borderRadius: BorderRadius.circular(
+                    15,
+                  ),
+                ),
+
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    width: 1.5,
+                    color: Colors.grey,
+                  ),
+                  borderRadius: BorderRadius.circular(
+                    15,
+                  ),
+                ),
+
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    width: 1.5,
+                    color: Colors.grey,
+                  ),
+                  borderRadius: BorderRadius.circular(
+                    15,
+                  ),
+                ),
+                errorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    width: 1.5,
+                    color: Colors.red,
+                  ),
+                  borderRadius: BorderRadius.circular(
+                    15,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            SizedBox(
+              width: deviceWidth,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Checkbox(
+                          side: BorderSide(width: 1.1,color: Colors.grey),
+                          
+                          value: false,
+                          onChanged: (value) {},
+                        ),
+                        AutoSizeText(
+                          'Keep me logged in',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.manrope(
+                            color: Colors.grey,
+                            decoration: TextDecoration.none,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      // width: 80,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 8,
+                      ),
+                      child: AutoSizeText(
+                        'Forgot password?',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.manrope(
+                          color: Colors.red,
+                          decoration: TextDecoration.none,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 10,
             ),
             MaterialButton(
               onPressed: () {
@@ -145,7 +283,7 @@ class SignupBox extends StatelessWidget {
                 ),
               ),
               child: AutoSizeText(
-                'Sign up',
+                'Login',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.manrope(
                   color: Colors.white,
@@ -201,7 +339,7 @@ class SignupBox extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 30,
+              height: 25,
             ),
             SizedBox(
               width: deviceWidth,
@@ -281,7 +419,7 @@ class SignupBox extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 30,
+              height: 25,
             ),
             SizedBox(
               width: deviceWidth,
@@ -289,7 +427,7 @@ class SignupBox extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   AutoSizeText(
-                    'Already have an account?',
+                    'Don\'t have an account?',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.manrope(
                       color: Colors.grey,
@@ -299,21 +437,20 @@ class SignupBox extends StatelessWidget {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {                                  Navigator.pushNamed(context, 'login');
-      },
+                    onTap: () {},
                     child: Container(
-                      width: 80,
+                      width: 90,
                       padding: EdgeInsets.symmetric(
                         horizontal: 8,
                       ),
                       child: AutoSizeText(
-                        'Login',
+                        'Sign up',
                         textAlign: TextAlign.center,
                         style: GoogleFonts.manrope(
                           color: Colors.black,
                           decoration: TextDecoration.none,
                           fontSize: 18,
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
