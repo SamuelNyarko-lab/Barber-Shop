@@ -5,6 +5,8 @@ import 'package:carousel_indicator/carousel_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../widgets/pagewithbg.dart';
+
 class ThirdOnboardingScreen extends StatelessWidget {
   const ThirdOnboardingScreen({super.key});
 
@@ -12,37 +14,11 @@ class ThirdOnboardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     double deviceHeight = MediaQuery.of(context).size.height;
     double deviceWidth = MediaQuery.of(context).size.width;
-    return SizedBox(
-      height: deviceHeight,
-      width: deviceWidth,
-      child: Center(
-        child: Stack(
-          children: [
-            Container(
-              color: Colors.black45,
-              height: deviceHeight,
-              width: deviceWidth,
-              child: const Image(
-                  fit: BoxFit.fill,
-                  opacity: AlwaysStoppedAnimation(
-                    0.5,
-                  ),
-                  image: AssetImage(
-                    'assets/images/Onboarding 3.jpg',
-                  )),
-            ),
-            Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 20.0),
-                child: Center(
-                  child: SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
+        return PageWithBackground(
+      assetImagePath: 'assets/images/Onboarding 3.jpg',
+      imageopacity: 0.5,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
                           height: 150,
@@ -181,13 +157,6 @@ class ThirdOnboardingScreen extends StatelessWidget {
                         )
                       ],
                     ),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+                   );
   }
 }
