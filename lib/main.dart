@@ -7,7 +7,7 @@ void main() {
 
 class BarberShop extends StatelessWidget {
   const BarberShop({super.key});
-  
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -16,8 +16,14 @@ class BarberShop extends StatelessWidget {
       title: 'Barber Shop',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        primaryColor: const Color.fromRGBO(
+          125,
+          106,
+          4,
+          1,
+        ),
       ),
-      //home: const SplashScreen(), 
+      //home: const SplashScreen(),
       initialRoute: RouteManager.splash,
       onGenerateRoute: RouteManager.generateRoute,
     );

@@ -1,6 +1,7 @@
 import 'package:barbershop/screens/authentication/code_verification_screen.dart';
 import 'package:barbershop/screens/authentication/loginscreen.dart';
 import 'package:barbershop/screens/authentication/signupscreen.dart';
+import 'package:barbershop/screens/main/mainpage.dart';
 import 'package:barbershop/screens/onboarding/fourthonboardingscreen.dart';
 import 'package:barbershop/screens/onboarding/secondonboardingscreen.dart';
 import 'package:barbershop/screens/onboarding/thirdonboardingscreen.dart';
@@ -18,6 +19,7 @@ class RouteManager {
   static const signup = 'signup';
   static const login = 'login';
   static const codeverification = 'codeverification';
+  static const mainpage = 'mainpage';
 
   static Route<dynamic> generateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
@@ -41,6 +43,8 @@ class RouteManager {
         return MaterialPageRoute(builder: (context) => LoginScreen());
       case codeverification:
         return MaterialPageRoute(builder: (context) => CodeVerificatioScreen());
+      case mainpage:
+        return MaterialPageRoute(builder: (context) => const MainPage());
 
       default:
         throw const FormatException('Page not found');

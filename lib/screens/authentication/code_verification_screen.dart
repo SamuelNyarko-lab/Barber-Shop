@@ -3,6 +3,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../widgets/pagewithbg.dart';
 
@@ -125,97 +126,8 @@ class CodeVerificatioScreen extends StatelessWidget {
                             onPressed: () {
                               // if (formkey.currentState!.validate()) {}
 
-                              showDialog(
-                                  context: context,
-                                  builder: ((context) => AlertDialog(
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(15),
-                                        ),
-                                        content: Container(
-                                          height: deviceHeight / 2,
-                                          width: deviceWidth / 1.2,
-                                          color: Colors.white,
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceAround,
-                                            children: [
-                                              SizedBox(
-                                                width: deviceWidth / 1.2,
-                                                child: AutoSizeText(
-                                                  'Code Sucessfully Verified',
-                                                  textAlign: TextAlign.center,
-                                                  maxFontSize: 20,
-                                                  minFontSize: 20,
-                                                  style: GoogleFonts.manrope(
-                                                    letterSpacing: 0.1,
-                                                    color: Color.fromRGBO(
-                                                      125,
-                                                      106,
-                                                      4,
-                                                      1,
-                                                    ),
-                                                    decoration:
-                                                        TextDecoration.none,
-                                                    fontSize: 20,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
-                                                ),
-                                              ),
-                                              SizedBox(
-                                                  width: deviceWidth / 1.2,
-                                                  child: Icon(
-                                                    Icons.safety_check,
-                                                    size: deviceWidth / 2.5,
-                                                  )),
-                                              MaterialButton(
-                                                onPressed: () {
-                                                  if (formkey.currentState!
-                                                      .validate()) {
-                                                    // Navigator.pushNamed(
-                                                    //     context, 'codeverification');
-                                                  }
-                                                },
-                                                minWidth: deviceWidth / 2,
-                                                height: 60,
-                                                color: Color.fromRGBO(
-                                                  125,
-                                                  106,
-                                                  4,
-                                                  1,
-                                                ),
-                                                shape: RoundedRectangleBorder(
-                                                  side: BorderSide(
-                                                    color: Color.fromRGBO(
-                                                      125,
-                                                      106,
-                                                      4,
-                                                      1,
-                                                    ),
-                                                    style: BorderStyle.solid,
-                                                    width: 1.5,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                    15,
-                                                  ),
-                                                ),
-                                                child: AutoSizeText(
-                                                  'Next',
-                                                  textAlign: TextAlign.center,
-                                                  style: GoogleFonts.manrope(
-                                                    color: Colors.white,
-                                                    decoration:
-                                                        TextDecoration.none,
-                                                    fontSize: 18,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      )));
+                              showVerifyDialog(
+                                  context, deviceHeight, deviceWidth);
                             },
                             minWidth: deviceWidth - 50,
                             height: 60,
@@ -287,6 +199,96 @@ class CodeVerificatioScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<dynamic> showVerifyDialog(
+      BuildContext context, double deviceHeight, double deviceWidth) {
+    return showDialog(
+        context: context,
+        builder: ((context) => AlertDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+              content: Container(
+                height: deviceHeight / 2,
+                width: deviceWidth / 1.2,
+                color: Colors.white,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    SizedBox(
+                      width: deviceWidth / 1.2,
+                      child: AutoSizeText(
+                        'Code Sucessfully Verified',
+                        textAlign: TextAlign.center,
+                        maxFontSize: 20,
+                        minFontSize: 20,
+                        style: GoogleFonts.manrope(
+                          letterSpacing: 0.1,
+                          color: Color.fromRGBO(
+                            125,
+                            106,
+                            4,
+                            1,
+                          ),
+                          decoration: TextDecoration.none,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                        width: deviceWidth / 1.2,
+                        child: Icon(
+                          Icons.safety_check,
+                          size: deviceWidth / 2.5,
+                          color: Colors.lightGreen,
+                        )),
+                    MaterialButton(
+                      onPressed: () {
+                          Navigator.pop(context); 
+                          Navigator.pushNamed(
+                              context, 'mainpage');
+                        
+                      },
+                      minWidth: deviceWidth / 2,
+                      height: 60,
+                      color: Color.fromRGBO(
+                        125,
+                        106,
+                        4,
+                        1,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(
+                          color: Color.fromRGBO(
+                            125,
+                            106,
+                            4,
+                            1,
+                          ),
+                          style: BorderStyle.solid,
+                          width: 1.5,
+                        ),
+                        borderRadius: BorderRadius.circular(
+                          15,
+                        ),
+                      ),
+                      child: AutoSizeText(
+                        'Next',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.manrope(
+                          color: Colors.white,
+                          decoration: TextDecoration.none,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )));
   }
 }
 
