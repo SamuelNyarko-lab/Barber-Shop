@@ -124,6 +124,98 @@ class CodeVerificatioScreen extends StatelessWidget {
                           MaterialButton(
                             onPressed: () {
                               // if (formkey.currentState!.validate()) {}
+
+                              showDialog(
+                                  context: context,
+                                  builder: ((context) => AlertDialog(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(15),
+                                        ),
+                                        content: Container(
+                                          height: deviceHeight / 2,
+                                          width: deviceWidth / 1.2,
+                                          color: Colors.white,
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceAround,
+                                            children: [
+                                              SizedBox(
+                                                width: deviceWidth / 1.2,
+                                                child: AutoSizeText(
+                                                  'Code Sucessfully Verified',
+                                                  textAlign: TextAlign.center,
+                                                  maxFontSize: 20,
+                                                  minFontSize: 20,
+                                                  style: GoogleFonts.manrope(
+                                                    letterSpacing: 0.1,
+                                                    color: Color.fromRGBO(
+                                                      125,
+                                                      106,
+                                                      4,
+                                                      1,
+                                                    ),
+                                                    decoration:
+                                                        TextDecoration.none,
+                                                    fontSize: 20,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                  width: deviceWidth / 1.2,
+                                                  child: Icon(
+                                                    Icons.safety_check,
+                                                    size: deviceWidth / 2.5,
+                                                  )),
+                                              MaterialButton(
+                                                onPressed: () {
+                                                  if (formkey.currentState!
+                                                      .validate()) {
+                                                    // Navigator.pushNamed(
+                                                    //     context, 'codeverification');
+                                                  }
+                                                },
+                                                minWidth: deviceWidth / 2,
+                                                height: 60,
+                                                color: Color.fromRGBO(
+                                                  125,
+                                                  106,
+                                                  4,
+                                                  1,
+                                                ),
+                                                shape: RoundedRectangleBorder(
+                                                  side: BorderSide(
+                                                    color: Color.fromRGBO(
+                                                      125,
+                                                      106,
+                                                      4,
+                                                      1,
+                                                    ),
+                                                    style: BorderStyle.solid,
+                                                    width: 1.5,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                    15,
+                                                  ),
+                                                ),
+                                                child: AutoSizeText(
+                                                  'Next',
+                                                  textAlign: TextAlign.center,
+                                                  style: GoogleFonts.manrope(
+                                                    color: Colors.white,
+                                                    decoration:
+                                                        TextDecoration.none,
+                                                    fontSize: 18,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      )));
                             },
                             minWidth: deviceWidth - 50,
                             height: 60,
