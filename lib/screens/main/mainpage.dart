@@ -15,11 +15,11 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int selectedIndex = 0;
-  List<Widget> _pages = const[
-     HomePage(),
-     StylishPage(),
-     BookingPage(),
-     ProfilePage()
+  final List<Widget> _pages = [
+     const HomePage(),
+     const StylishPage(),
+     const BookingPage(),
+     const ProfilePage()
   ];
 
   @override
